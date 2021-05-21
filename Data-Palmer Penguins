@@ -6,6 +6,8 @@ install.packages("janitor")
 library("janitor")
 install.packages("dplyr")
 library("dplyr")
+install.packages("palmerpenguins")
+library("palmerpenguins")
 skim_without_charts(penguins)
 glimpse(penguins)
 head(penguins)
@@ -19,3 +21,7 @@ rename(island_new=island)
 rename_with(penguins,toupper)
 
 clean_names(penguins)
+
+colnames(diamonds)
+
+mutate(diamonds,carat_2=carat*100)
