@@ -1,0 +1,8 @@
+#DATASET-palmerpenguins
+data("penguins")    
+
+#CREATING PLOTS
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = body_mass_g, flipper_length_mm))
