@@ -1,3 +1,22 @@
+#STARTING WTIH DATA
+install.packages("palmerpenguins")
+library("palmerpenguins")
+summary (penguins)
+view(penguins)
+view(penguins_raw)
+print("coding in R")
+second_variable<-12.5
+first_variable<-"new variable"
+vec_1 <-c(13,48,55,80)
+vec_1
+data ("diamonds")
+View(diamonds)
+head(diamonds)
+str(diamonds)
+colnames(diamonds)
+
+#DATA CLEANING 
+#INSTALLING PACKAGES/LIBRARIES
 install.packages("here")
 library("here")
 install.packages("skimr")
@@ -15,13 +34,41 @@ penguins %>%
 select (species)
 penguins %>%
 select(-species)
+#RENAME COLUMNS
 penguins %>%
 rename(island_new=island)
-
+#CHANGE TO UPPERCASE/LOWERCASE
 rename_with(penguins,toupper)
 
 clean_names(penguins)
 
 colnames(diamonds)
-
+#CREATE NEW COLUMNS WITH CALCULATION
 mutate(diamonds,carat_2=carat*100)
+
+#ORGANIZING DATA
+#ARRANGING BY COLUMN 
+penguins %>%
+arrange(bill_length_mm)
+#OR DESCENDING ORDER
+penguins %>%
+arrange(-bill_length_mm)
+#SAVE AS DATAFRAME
+penguins2 <-penguins %>%
+arrange(-bill_length_mm)
+View(penguins2)
+#SORT DATA USING GROUP
+penguins %>% group_by(island) %>%
+drop_na() %>%
+summarise(mean_bill_length_mm=mean(bill_length_mm))
+
+#GROUP BY 2 VARIBALES & SUMMARIZE MEAN & MAX
+penguins %>% 
+group_by(species,island) %>%
+drop_na() %>%
+summarise(max_bl=max(bill_length_mm),mean_bl=mean(bill_length_mm))
+
+#FILTER RESULTS USING FILTER FUNCTIION
+penguins %>% 
+filter(species=="Adelie")
+
