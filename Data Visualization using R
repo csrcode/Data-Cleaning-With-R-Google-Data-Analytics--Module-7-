@@ -1,8 +1,28 @@
 #DATASET-palmerpenguins
 data("penguins")    
-
+library(ggplot2)
 #CREATING PLOTS
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+#ASTHETICS
+#CHANGING AXIS
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = body_mass_g, flipper_length_mm))
+#ADDING COLORS
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,color=species))
+#ASSIGINING SHAPES INSTEAD OF COLOR
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,shape=species))
+#ASSIGINING BOTH SHAPES AND COLOR
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,shape=species,color=species))
+#ASSIGINING BOTH SHAPES , COLOR AND SIZE
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,shape=species,color=species,size=species))
+#ALPHA ASTHETICS FOR BALCK & WHITE GRAPH WITH DIFF. TRANSPARENCY LEVELS
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,alpha=species))
+#ASSIGNING SINGLE COLOR TO ALL POINTS
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g),color="purple")
