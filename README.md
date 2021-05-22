@@ -5,3 +5,5 @@
 3)Changing Column Names
 
 4)Using Pipes
+
+5) Data Visualisation 
