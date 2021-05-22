@@ -26,3 +26,16 @@ ggplot(data = penguins) +
 #ASSIGNING SINGLE COLOR TO ALL POINTS
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g),color="purple")
+#CHANGING GEOM (GRAPHS)
+ggplot(data = penguins) + 
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+#ADDING 2 GEOMES
+ggplot(data = penguins) + 
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+#PLOTTING SEPERATE LINES FOR DIFF. VARIABLES
+ggplot(data = penguins) + 
+  geom_smooth(mapping = aes(x = flipper_length_mm, y = body_mass_g,linetype=species))
+#USING GEOM_JITTER (JITTERING HELPS WHEN DATA IS OVERLAPING)
+ggplot(data = penguins) + 
+  geom_jitter(mapping = aes(x = flipper_length_mm, y = body_mass_g))
