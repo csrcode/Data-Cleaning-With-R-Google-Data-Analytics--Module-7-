@@ -1,0 +1,13 @@
+#DATA USED diamonds
+#USING GEOM_BAR (BAR CHART)
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut))
+#ADDING OUTLINE COLORS
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut,color=cut))
+#ADDING FILL COLORS 
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut,fill=cut))
+#ADDING FILL TO A DIFF. VARIABLE (CLARITY) TO GET THE STACKED BAR CHART
+ggplot(data=diamonds) +
+  geom_bar(mapping = aes(x=cut,fill=clarity))
