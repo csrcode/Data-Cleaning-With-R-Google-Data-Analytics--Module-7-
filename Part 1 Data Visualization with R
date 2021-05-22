@@ -61,8 +61,8 @@ ggplot(data = penguins) +
   geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,color=species)) +
   labs(title="Palmer Penguins: Body Mass vs. Flipper Length")+
   annotate("text",x=220,y=3500,label="The Gentoos are the largest")
-#CHANGING SIZE,COLOR,FONT OF THIS TEXT
+#CHANGING SIZE,COLOR,FONT AND ANGLE OF THIS TEXT
 ggplot(data = penguins) + 
   geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g,color=species)) +
   labs(title="Palmer Penguins: Body Mass vs. Flipper Length")+
-  annotate("text",x=220,y=3500,label="The Gentoos are the largest",color="purple",fontface="bold",size=4.5)
+  annotate("text",x=220,y=3500,label="The Gentoos are the largest",color="purple",fontface="bold",size=4.5,angle=25)
